@@ -14,12 +14,22 @@
         their followers/viewer information (data in motion), Game information (game title, tags), chat (data in motion) -->
     <p>Profile</p>
     <ul>
-        <li></li>
+        <li>profileId <b>(Primary Key)</b></li>
+        <li>profileActivationToken</li>
+        <li>profileEmail</li>
+        <li>profileHash</li>
+        <li>profileDisplayName</li>
+        <li>profilePanels</li>
+        <li>profileStreamKey</li>
     </ul>
 
     <p>Game Information</p>
     <ul>
-        <li></li>
+        <li>gameId <b>(Primary Key)</b></li> <!-- Actual Game Playing -->
+        <li>gameHost <b>(Foreign Key)</b></li>
+        <li>gameTitle</li>
+        <li>gameTags</li>
+        <li>gameStatus</li> <!-- Live or not -->
     </ul>
 
     <!-- Relations Section ----------------------------------------------------------------------------------------- -->
