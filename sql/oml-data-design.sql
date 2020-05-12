@@ -18,11 +18,11 @@ INSERT INTO gameInformation VALUES (UNHEX('aed673e1153044199b6cf38f920dacf0'), (
                                     NULL, 'Live');
 
 -- Write and execute a select statement for a row using its primary key as the selector. ERROR
-SELECT * FROM profile WHERE profileId = HEX('1ed673e1153044199b6cf38f920dacf0');
+SELECT HEX(profileId),profileDisplayName FROM profile WHERE profileId = UNHEX('1ed673e1153044199b6cf38f920dacf0');
 
 -- Write and execute a select statement that incorporates both a where clause and an inner-join on both tables
 --      used in this assignment.
-SELECT * FROM profile WHERE profileId = HEX('1ed673e1153044199b6cf38f920dacf0') INNER JOIN profile.profileId = gameInformation.gameHost;
+SELECT profileDisplayName FROM profile INNER JOIN gameInformation ON profile.profileId = gameInformation.gameHost;
 
 -- Write a select statement based of off DDC-Twitter that counts the number of likes for a specific tweet.
 --      Using information not currently in SQL tables, this is realistic fiction - DO NOT RUN
